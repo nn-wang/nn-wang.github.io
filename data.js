@@ -2,9 +2,9 @@ const siteData = {
   profile: {
     name: "Ningning Wang",
     photo: "figures/photo.jpg",
-    title: "Senior Student in Artificial Intelligence",
-    affiliation: "Dalian University of Technology",
-    bio: `Senior student at <a href="https://www.dlut.edu.cn/" target="_blank">Dalian University of Technology</a>, majoring in Artificial Intelligence. Admitted to <a href="https://www.ustc.edu.cn/" target="_blank">University of Science and Technology of China (USTC)</a> for Master's degree in Information and Communication Engineering. Passionate about VLM applications and Reinforcement Learning.`,
+    title: "Incoming Master's Student",
+    affiliation: "University of Science and Technology of China",
+    bio: `I received my Bachelor's degree in Artificial Intelligence from <a href="https://www.dlut.edu.cn/" target="_blank">Dalian University of Technology</a>. I will begin my Master's degree in Information and Communication Engineering at the <a href="https://www.ustc.edu.cn/" target="_blank">University of Science and Technology of China (USTC)</a> in September 2026. I am passionate about VLM applications and Reinforcement Learning.`,
     email: "NingningWang0608@gmail.com",
   },
 
@@ -41,20 +41,21 @@ const siteData = {
       institution: "University of Science and Technology of China",
       degree: "Master's in Information and Communication Engineering",
       period: "2026 - 20xx (expected)",
-      status: "Admitted Future Master",
+      status: "Incoming Master's Student",
       logo: "",
     },
     {
       institution: "Dalian University of Technology",
       degree: "Bachelor of Engineering in Artificial Intelligence",
-      period: "2022 - 2026 (expected)",
-      status: "Senior Student",
+      period: "2022 - 2026",
+      status: "Graduated",
       logo: "",
     },
   ],
 
   news: [
-    // Add news items here. Example:
+    { date: "Jul. 2026", content: "One paper has been accepted by ECCV 2026!" },
+    { date: "Jun. 2026", content: "I graduated from Dalian University of Technology with a Bachelor's degree in Artificial Intelligence!" },
     { date: "Dec. 2025", content: "Admitted to USTC Master's Program(expect 26 Fall)!" },
   ],
 
