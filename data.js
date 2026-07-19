@@ -4,7 +4,7 @@ const siteData = {
     photo: "figures/photo.jpg",
     title: "Incoming Master's Student",
     affiliation: "University of Science and Technology of China",
-    bio: `I received my Bachelor's degree in Artificial Intelligence from <a href="https://www.dlut.edu.cn/" target="_blank">Dalian University of Technology</a>. I will begin my Master's degree in Information and Communication Engineering at the <a href="https://www.ustc.edu.cn/" target="_blank">University of Science and Technology of China (USTC)</a> in September 2026. I am passionate about VLM applications and Reinforcement Learning.`,
+    bio: `I received my Bachelor's degree in Artificial Intelligence from <a href="https://www.dlut.edu.cn/" target="_blank">Dalian University of Technology</a>. I will begin my Master's degree in Information and Communication Engineering at the <a href="https://www.ustc.edu.cn/" target="_blank">University of Science and Technology of China (USTC)</a> in September 2026, advised by Xun Yang and Beier Zhu. My research focuses on visual reasoning in vision-language models.`,
     email: "NingningWang0608@gmail.com",
   },
 
@@ -32,8 +32,7 @@ const siteData = {
   ],
 
   researchInterests: [
-    "Vision-Language Models",
-    "Reinforcement Learning",
+    "Visual Reasoning in Vision-Language Models",
   ],
 
   academicJourney: [
