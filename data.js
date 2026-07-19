@@ -32,7 +32,7 @@ const siteData = {
   ],
 
   researchInterests: [
-    "Visual Reasoning in Vision-Language Models",
+    "Visual Reasoning",
   ],
 
   academicJourney: [
@@ -72,8 +72,8 @@ const siteData = {
     // ── Example (remove or replace with your real papers) ──
     {
       title: "Efficient Agents: Building Effective Agents While Reducing Cost",
-      authors: "N Wang, X Hu, P Liu, H Zhu, Y Hou, H Huang, S Zhang, J Yang, J Liu, et al.",
-      venue: "arxiv:2508.02694",
+      authors: "Ningning Wang, X Hu, P Liu, H Zhu, Y Hou, H Huang, S Zhang, J Yang, J Liu, et al.",
+      venue: "Tech Report",
       venueShort: "arxiv",
       highlight: "",
       tags: ["Agent"],
