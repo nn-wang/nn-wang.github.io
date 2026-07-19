@@ -59,6 +59,16 @@ const siteData = {
   ],
 
   publications: [
+    {
+      title: "Contrastive-Guided Self-Supervised Latent Visual Reasoning for Hallucination Mitigation",
+      authors: "Aoxue Dai, Ningning Wang<sup>*</sup>",
+      venue: "European Conference on Computer Vision (ECCV), 2026",
+      venueShort: "ECCV 2026",
+      highlight: "",
+      tags: ["Visual Reasoning", "VLM"],
+      image: "figures/papers/colvr.png",
+      links: [],
+    },
     // ── Example (remove or replace with your real papers) ──
     {
       title: "Efficient Agents: Building Effective Agents While Reducing Cost",

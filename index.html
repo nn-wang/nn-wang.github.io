@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css?v=20260719" />
 </head>
 <body>
 
@@ -79,7 +79,7 @@
   </div>
 </footer>
 
-<script src="data.js"></script>
+<script src="data.js?v=20260719"></script>
 <script>
 (function () {
   const d = siteData;
@@ -183,8 +183,8 @@
       );
 
       const thumbHtml = p.image
-        ? `<img class="pub-thumb" src="${p.image}" alt="${p.title}" />`
-        : `<div class="pub-thumb"></div>`;
+        ? `<div class="pub-visual"><img class="pub-thumb" src="${p.image}" alt="${p.title}" loading="lazy" /></div>`
+        : `<div class="pub-visual pub-visual-placeholder" aria-hidden="true"></div>`;
 
       div.innerHTML = `
         ${thumbHtml}
