@@ -10,7 +10,6 @@
   --bg-alt: #f8fafc;
   --border: #e2e8f0;
   --radius: 12px;
-  --shadow-soft: 0 10px 30px rgba(15, 23, 42, 0.06);
   --max-width: 880px;
 }
 
@@ -75,6 +74,11 @@ nav .nav-name {
   font-weight: 700;
   font-size: 15px;
   color: var(--text-primary);
+}
+
+nav a.nav-name:hover {
+  color: var(--text-primary);
+  text-decoration: none;
 }
 
 nav .nav-links {
@@ -231,6 +235,35 @@ nav .nav-links a:hover {
   display: inline-block;
 }
 
+.section-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 8px;
+}
+
+.section-heading .section-title {
+  margin-bottom: 0;
+}
+
+.view-all-link {
+  flex-shrink: 0;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.view-all-link:hover {
+  text-decoration: none;
+}
+
+.author-legend {
+  margin-bottom: 14px;
+  color: var(--text-muted);
+  font-size: 11px;
+  line-height: 1.5;
+}
+
 /* ── Academic Journey ── */
 
 .timeline {
@@ -310,10 +343,9 @@ nav .nav-links a:hover {
 .news-list {
   list-style: none;
   padding: 6px 16px;
-  background: linear-gradient(145deg, #fff 0%, var(--bg-alt) 100%);
+  background: #fff;
   border: 1px solid var(--border);
   border-radius: 14px;
-  box-shadow: var(--shadow-soft);
 }
 
 .news-item {
@@ -369,10 +401,9 @@ nav .nav-links a:hover {
 .honors-list {
   list-style: none;
   padding: 6px 16px;
-  background: linear-gradient(145deg, #fff 0%, var(--bg-alt) 100%);
+  background: #fff;
   border: 1px solid var(--border);
   border-radius: 14px;
-  box-shadow: var(--shadow-soft);
 }
 
 .honor-item {
@@ -418,59 +449,49 @@ nav .nav-links a:hover {
 .pub-list {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
 }
 
 .pub-item {
   display: grid;
-  grid-template-columns: 210px minmax(0, 1fr);
-  gap: 24px;
-  align-items: center;
-  padding: 20px 22px;
-  background: linear-gradient(145deg, #fff 0%, var(--bg-alt) 100%);
-  border-radius: 16px;
-  border: 1px solid var(--border);
-  box-shadow: var(--shadow-soft);
-  transition: border-color 0.25s, box-shadow 0.25s, transform 0.25s;
+  grid-template-columns: 260px minmax(0, 1fr);
+  gap: 22px;
+  align-items: stretch;
+  padding: 16px;
+  background: #fff;
+  border-bottom: 1px solid var(--border);
+  transition: background-color 0.2s;
+}
+
+.pub-item:last-child {
+  border-bottom: none;
 }
 
 .pub-item:hover {
-  border-color: var(--accent);
-  box-shadow: 0 16px 38px rgba(15, 23, 42, 0.1);
-  transform: translateY(-2px);
+  background: var(--bg-alt);
 }
 
 .pub-visual {
   width: 100%;
-  padding: 7px;
+  min-height: 150px;
   overflow: hidden;
   background: #fff;
   border: 1px solid var(--border);
-  border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.12);
-  transform: rotate(-1.25deg);
+  border-radius: 8px;
+  transform: rotate(-0.65deg);
   transform-origin: center;
-  transition: box-shadow 0.25s, transform 0.25s;
-}
-
-.pub-item:nth-child(even) .pub-visual {
-  transform: rotate(1deg);
-}
-
-.pub-item:hover .pub-visual {
-  box-shadow: 0 12px 26px rgba(15, 23, 42, 0.16);
-  transform: rotate(-0.25deg) translateY(-2px);
-}
-
-.pub-item:nth-child(even):hover .pub-visual {
-  transform: rotate(0.2deg) translateY(-2px);
 }
 
 .pub-thumb {
   display: block;
   width: 100%;
-  height: auto;
-  border-radius: 7px;
+  height: 100%;
+  min-height: 150px;
+  object-fit: cover;
+  border-radius: inherit;
   background: var(--bg-alt);
 }
 
@@ -595,6 +616,113 @@ nav .nav-links a:hover {
   text-decoration: none;
 }
 
+/* ── All Publications Page ── */
+
+.all-publications-page {
+  min-height: calc(100vh - 116px);
+  padding: 42px 0 56px;
+}
+
+.all-publications-page .author-legend {
+  margin-bottom: 0;
+}
+
+.page-back-link {
+  display: inline-block;
+  margin-bottom: 18px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.page-back-link:hover {
+  text-decoration: none;
+}
+
+.page-title {
+  margin-bottom: 6px;
+  font-size: 28px;
+  font-weight: 800;
+  letter-spacing: -0.4px;
+}
+
+.page-intro {
+  margin-bottom: 8px;
+  color: var(--text-secondary);
+  font-size: 13.5px;
+}
+
+.all-pub-list {
+  overflow: hidden;
+  margin-top: 18px;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.all-pub-item {
+  padding: 18px 20px;
+  border-bottom: 1px solid var(--border);
+  transition: background-color 0.2s;
+}
+
+.all-pub-item:last-child {
+  border-bottom: none;
+}
+
+.all-pub-item:hover {
+  background: var(--bg-alt);
+}
+
+.all-pub-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.all-pub-title {
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.45;
+}
+
+.all-pub-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 14px;
+  margin-top: 7px;
+}
+
+.all-pub-authors {
+  color: var(--text-secondary);
+  font-size: 12.75px;
+}
+
+.all-pub-authors .self {
+  color: var(--text-primary);
+  font-weight: 700;
+}
+
+.all-pub-authors sup {
+  color: var(--accent-dark);
+  font-size: 8px;
+  font-weight: 800;
+}
+
+.all-pub-venue {
+  color: var(--text-muted);
+  font-size: 12px;
+  font-style: italic;
+}
+
+.all-pub-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 10px;
+}
+
 /* ── Footer ── */
 
 footer {
@@ -672,13 +800,19 @@ footer p {
 
   .pub-item {
     grid-template-columns: 1fr;
-    gap: 18px;
-    padding: 18px;
+    gap: 14px;
+    padding: 14px;
   }
 
   .pub-visual {
     width: 100%;
+    min-height: 0;
+    aspect-ratio: 16 / 9;
     transform: rotate(-0.6deg);
+  }
+
+  .pub-thumb {
+    min-height: 0;
   }
 
   .pub-header {
@@ -691,5 +825,21 @@ footer p {
 
   .pub-title {
     font-size: 15px;
+  }
+
+  .all-publications-page {
+    padding: 30px 0 44px;
+  }
+
+  .page-title {
+    font-size: 24px;
+  }
+
+  .all-pub-item {
+    padding: 15px 14px;
+  }
+
+  .all-pub-header {
+    flex-direction: column;
   }
 }

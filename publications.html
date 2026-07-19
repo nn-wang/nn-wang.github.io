@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Publications | Academic Homepage</title>
+  <meta name="description" content="Complete publication list." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css?v=20260720" />
+</head>
+<body>
+
+<nav>
+  <div class="container">
+    <a class="nav-name" id="nav-name" href="index.html"></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#publications">Selected</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main class="all-publications-page">
+  <div class="container">
+    <a class="page-back-link" href="index.html#publications">← Back to homepage</a>
+    <h1 class="page-title">Publications</h1>
+    <p class="page-intro">A complete list of publications.</p>
+    <p class="author-legend">* Equal contribution · † Corresponding author · ‡ Project leader</p>
+    <div class="all-pub-list" id="all-pub-list"></div>
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    <p id="footer-text"></p>
+  </div>
+</footer>
+
+<script src="data.js?v=20260720"></script>
+<script>
+(function () {
+  const d = siteData;
+  const publications = [
+    ...(d.publications || []),
+    ...(d.additionalPublications || []),
+  ];
+
+  document.title = "Publications | " + d.profile.name;
+  document.getElementById("nav-name").textContent = d.profile.name;
+  document.getElementById("footer-text").textContent = d.footer.text;
+
+  const listEl = document.getElementById("all-pub-list");
+  if (publications.length === 0) {
+    listEl.innerHTML =
+      '<div class="empty-placeholder">Publications will be listed here.</div>';
+    return;
+  }
+
+  publications.forEach((p) => {
+    const item = document.createElement("article");
+    item.className = "all-pub-item";
+
+    const badges = [
+      p.venueShort
+        ? `<span class="pub-venue-badge">${p.venueShort}</span>`
+        : "",
+      p.highlight
+        ? `<span class="pub-highlight">${p.highlight}</span>`
+        : "",
+    ]
+      .filter(Boolean)
+      .join("");
+
+    const tags = (p.tags || [])
+      .map((tag) => `<span class="pub-tag">${tag}</span>`)
+      .join("");
+
+    const links = (p.links || [])
+      .map(
+        (link) =>
+          `<a class="pub-link" href="${link.url}" target="_blank" rel="noopener">${link.label}</a>`
+      )
+      .join("");
+
+    const selfMarkup = `<span class="self">${d.profile.name}</span>`;
+    const authorsHtml = (p.authors || "")
+      .split(d.profile.name)
+      .join(selfMarkup);
+
+    item.innerHTML = `
+      <div class="all-pub-header">
+        <div>${badges}</div>
+        <div class="pub-tags">${tags}</div>
+      </div>
+      <div class="all-pub-title">${p.title}</div>
+      <div class="all-pub-meta">
+        <span class="all-pub-authors">${authorsHtml}</span>
+        <span class="all-pub-venue">${p.venue}</span>
+      </div>
+      ${links ? `<div class="all-pub-links">${links}</div>` : ""}
+    `;
+    listEl.appendChild(item);
+  });
+})();
+</script>
+
+</body>
+</html>

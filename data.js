@@ -53,15 +53,15 @@ const siteData = {
   ],
 
   news: [
-    { date: "Jul. 2026", content: "One paper has been accepted by ECCV 2026!" },
-    { date: "Jun. 2026", content: "I graduated from Dalian University of Technology with a Bachelor's degree in Artificial Intelligence!" },
-    { date: "Dec. 2025", content: "Admitted to USTC Master's Program(expect 26 Fall)!" },
+    { date: "Jul. 2026", content: "One paper was accepted to ECCV 2026!" },
+    { date: "Jun. 2026", content: "Graduated from Dalian University of Technology!" },
+    { date: "Dec. 2025", content: "Admitted to USTC for Fall 2026!" },
   ],
 
   publications: [
     {
       title: "Contrastive-Guided Self-Supervised Latent Visual Reasoning for Hallucination Mitigation",
-      authors: "Aoxue Dai, Ningning Wang<sup>*</sup>",
+      authors: "Aoxue Dai, Ningning Wang<sup>†</sup>",
       venue: "European Conference on Computer Vision (ECCV), 2026",
       venueShort: "ECCV 2026",
       highlight: "",
@@ -96,6 +96,19 @@ const siteData = {
     //     { label: "PDF", url: "#" },
     //   ],
     // },
+  ],
+  additionalPublications: [
+    {
+      title: "OAgents: An Empirical Study of Building Effective Agents",
+      authors: "He Zhu<sup>*</sup>, Tianrui Qin<sup>*</sup>, King Zhu, Heyuan Huang, Yeyi Guan<sup>‡</sup>, Jinxiang Xia<sup>‡</sup>, Yi Yao, Hanhao Li<sup>‡</sup>, Ningning Wang, et al.",
+      venue: "Findings of the Association for Computational Linguistics: EMNLP 2025",
+      venueShort: "EMNLP Findings",
+      highlight: "",
+      tags: ["Agent"],
+      links: [
+        { label: "ARXIV", url: "https://arxiv.org/abs/2506.15741" },
+      ],
+    },
   ],
   footer: {
     text: "© 2026 Ningning Wang. Hosted by GitHub Pages.",
