@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css?v=20260720" />
+  <link rel="stylesheet" href="style.css?v=20260720b" />
 </head>
 <body>
 
@@ -83,7 +83,7 @@
   </div>
 </footer>
 
-<script src="data.js?v=20260720"></script>
+<script src="data.js?v=20260720b"></script>
 <script>
 (function () {
   const d = siteData;
@@ -159,27 +159,12 @@
       const div = document.createElement("div");
       div.className = "pub-item";
 
-      const badges = [
-        p.venueShort
-          ? `<span class="pub-venue-badge">${p.venueShort}</span>`
-          : "",
-        p.highlight
-          ? `<span class="pub-highlight">${p.highlight}</span>`
-          : "",
-      ]
-        .filter(Boolean)
-        .join("");
-
-      const tags = (p.tags || [])
-        .map((t) => `<span class="pub-tag">${t}</span>`)
-        .join("");
-
       const links = (p.links || [])
         .map(
           (l) =>
             `<a class="pub-link" href="${l.url}" target="_blank" rel="noopener">${l.label}</a>`
         )
-        .join("");
+        .join('<span class="pub-link-separator">·</span>');
 
       const authorsHtml = (p.authors || "").replace(
         /Ningning Wang/g,
@@ -193,14 +178,14 @@
       div.innerHTML = `
         ${thumbHtml}
         <div class="pub-body">
-          <div class="pub-header">
-            <div>${badges}</div>
-            <div class="pub-tags">${tags}</div>
+          <div class="pub-primary">
+            <div class="pub-title">${p.title}</div>
+            <div class="pub-venue-inline">${p.venue}</div>
           </div>
-          <div class="pub-title">${p.title}</div>
-          <div class="pub-authors">${authorsHtml}</div>
-          <div class="pub-venue-text">${p.venue}</div>
-          <div class="pub-links">${links}</div>
+          <div class="pub-secondary">
+            <div class="pub-authors">${authorsHtml}</div>
+            ${links ? `<div class="pub-links">${links}</div>` : ""}
+          </div>
         </div>
       `;
       pubEl.appendChild(div);

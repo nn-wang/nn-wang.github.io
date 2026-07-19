@@ -100,9 +100,9 @@ const siteData = {
   additionalPublications: [
     {
       title: "OAgents: An Empirical Study of Building Effective Agents",
-      authors: "He Zhu<sup>*</sup>, Tianrui Qin<sup>*</sup>, King Zhu, Heyuan Huang, Yeyi Guan<sup>‡</sup>, Jinxiang Xia<sup>‡</sup>, Yi Yao, Hanhao Li<sup>‡</sup>, Ningning Wang, et al.",
+      authors: "He Zhu<sup>*</sup>, Tianrui Qin<sup>*</sup>, King Zhu, Heyuan Huang, Yeyi Guan, Jinxiang Xia, Yi Yao, Hanhao Li, Ningning Wang, et al.",
       venue: "Findings of the Association for Computational Linguistics: EMNLP 2025",
-      venueShort: "EMNLP Findings",
+      venueShort: "EMNLP 2025 Findings",
       highlight: "",
       tags: ["Agent"],
       links: [
